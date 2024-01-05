@@ -1,5 +1,57 @@
 ---
 import "../styles/globals.css";
+const projects = [
+	["Project 1", "https://github.com", "About Dancing"],
+	["Project 2", "https://github.com", "About Dancing"],
+	["Project 3", "https://github.com", "About singing"],
+	["Project 4", "https://github.com", "About singing"],
+];
+
+const qualifications = [
+	"School Mai Pdhai Kari hai",
+	"College mai tp keya :)",
+	"Abhi bhi padh raha hu",
+];
+const hobby = [
+	["Cycling", "https://github.com", "About Cycling"],
+	["Dancing", "https://github.com", "About Dancing"],
+	["Singing", "https://github.com", "About Singing"],
+	["Coding", "https://github.com", "About Coding"],
+	["Reading", "https://github.com", "About Reading"],
+	["Writing", "https://github.com", "About Writing"],
+	["Gaming", "https://github.com", "About Gaming"],
+	["Sleeping", "https://github.com", "About Sleeping"],
+	["Eating", "https://github.com", "About Eating"],
+	["Watching", "https://github.com", "About Watching"],
+	["Listening", "https://github.com", "About Listening"],
+	["Travelling", "https://github.com", "About Travelling"],
+	["Cooking", "https://github.com", "About Cooking"],
+	["Photography", "https://github.com", "About Photography"],
+	["Painting", "https://github.com", "About Painting"],
+	["Sketching", "https://github.com", "About Sketching"],
+	["Swimming", "https://github.com", "About Swimming"],
+	["Running", "https://github.com", "About Running"],
+	["Gardening", "https://github.com", "About Gardening"],
+	["Fishing", "https://github.com", "About Fishing"],
+	["Hiking", "https://github.com", "About Hiking"],
+	["Camping", "https://github.com", "About Camping"],
+	["Hunting", "https://github.com", "About Hunting"],
+	["Skiing", "https://github.com", "About Skiing"],
+	["Skating", "https://github.com", "About Skating"],
+	["Bowling", "https://github.com", "About Bowling"],
+	["Climbing", "https://github.com", "About Climbing"],
+	["Horse Riding", "https://github.com", "About Horse Riding"],
+	["Ice Skating", "https://github.com", "About Ice Skating"],
+	["Ice Fishing", "https://github.com", "About Ice Fishing"],
+	["Ice Climbing", "https://github.com", "About Ice Climbing"],
+	["Ice Hockey", "https://github.com", "About Ice Hockey"],
+	["Ice Skating", "https://github.com", "About Ice Skating"],
+	["Ice Fishing", "https://github.com", "About Ice Fishing"],
+	["Ice Climbing", "https://github.com", "About Ice Climbing"],
+	["Ice Hockey", "https://github.com", "About Ice Hockey"],
+	["Ice Skating", "https://github", ""],
+];
+import BlogLayout from "../layouts/BlogLayout.astro";
 ---
 
 <html lang="en">
@@ -10,42 +62,49 @@ import "../styles/globals.css";
 		<title>Astro</title>
 	</head>
 	<body
-		class="bg-slate-200 min-h-screen w-full flex flex-col justify-center max-w-2xl gap-4 m-auto p-10"
+		class="bg-slate-200 dark:bg-[#111] dark:text-white grain min-h-screen w-full max-w-2xl gap-4 m-auto p-10 space-y-7 animate-fade-up"
 	>
-		<h1 class="text-7xl font-extrabold">Hey im Someone, Nice to meet you!</h1>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic maiores
-			dolor, inventore velit officiis facilis laborum. Adipisci, neque ut
-			perferendis suscipit cum voluptates, nisi sapiente, saepe illo id
-			dolor at! Doloremque, labore voluptatibus! Omnis, repellat? Laborum
-			omnis porro aperiam ipsum inventore harum rem natus expedita,
-			excepturi voluptates quisquam accusamus voluptatem amet! Atque
-			similique itaque quasi officia asperiores voluptatum fuga ab.
-			Ratione nulla, at dicta debitis minima facilis ullam eveniet quae ab
-			consequuntur, dignissimos molestias optio repellendus quam odit
-			cupiditate porro nemo reprehenderit ad magnam sint velit consectetur
-			nostrum nisi. Nesciunt?
-		</p>
-		<img
-			src="/thispersondoesnotexist.jpg"
-			class="w-full max-w-xs rounded-2xl"
-		/>
+		<h1 class="text-4xl font-extrabold">
+			Hey im Someone, Nice to meet you!
+		</h1>
+		<div class="flex flex-row justify-between">
+			<p class="max-w-[40ch]">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+				voluptatum error, voluptas eius, repudiandae accusantium
+				incidunt, inventore ipsa commodi asperiores cumque temporibus
+				omnis sunt ut? Accusantium modi nobis harum quibusdam!
+			</p>
+			<div
+				class="bg-white p-3 text-black text-sm text-center rounded-2xl border-4 border-teal-400 rotate-6"
+			>
+				<img
+					src="/thispersondoesnotexist.jpg"
+					class="h-24 w-auto rounded-2xl"
+				/>
+				<p class="pt-1">the is meee</p>
+			</div>
+		</div>
 
-		<h1>Projects</h1>
-		<ol>
-			<li>Project 1</li>
-			<li>Project 2</li>
-			<li>Project 3</li>
+		<h1 class="text-4xl font-extrabold">Projects</h1>
+		<ol class="list-disc pl-3 space-y-3">
+			{
+				projects.map((key) => (
+					<li class="italic">
+						<a
+							class="font-bold not-italic underline underline-offset-4 decoration-2 decoration-teal-400 pr-2"
+							href={key[1]}
+							target="_blank"
+						>
+							{key[0]}
+						</a>
+						{key[2]}
+					</li>
+				))
+			}
 		</ol>
-		<h1>Qualification</h1>
-		<ul>
-			<li>School Mai Pdhai Kari hai</li>
-			<li>College mai tp keya :)</li>
-			<li>Abhi bhi padh raha hu</li>
-		</ul>
-		<h1>Hobbies</h1>
-		<ul>
-			<li>Muje cycling aati hai :(</li>
+		<h1 class="text-4xl font-extrabold">Qualification</h1>
+		<ul class="list-disc pl-3 space-y-3">
+			{qualifications.map((key) => <li class="font-bold ">{key}</li>)}
 		</ul>
 		<h1>Blogs</h1>
 		<ul>
